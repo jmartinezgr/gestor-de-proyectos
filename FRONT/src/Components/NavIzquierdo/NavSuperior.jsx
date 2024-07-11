@@ -1,5 +1,7 @@
-import React from 'react';
-function NavSuperior(  ){
+import React , {useState} from 'react';
+
+function NavSuperior( {onToggleInvite} ){
+    
     
     
     
@@ -27,7 +29,7 @@ function NavSuperior(  ){
                             Miembros
 
                         </p>
-                        <button className=' bg-transparent p-4 ml-auto text-white '>
+                        <button  onClick={onToggleInvite}  className=' bg-transparent p-4 ml-auto text-white '>
                             <img className='w-4 h-4  ' src='/mas.svg'/>
 
                         </button>
