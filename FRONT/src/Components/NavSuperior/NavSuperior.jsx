@@ -3,30 +3,50 @@ import React from 'react';
 const Navbar = () => {
   return (
     <nav className="bg-gray-800 shadow-lg">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2  lg:px-8">
         <div className="relative flex items-center justify-between h-16">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button */}
-            <button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out">
-              {/* Icon when menu is closed */}
-              <svg className="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-              </svg>
-            </button>
-          </div>
-          <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0">
+          
+          <div className="flex-1 flex items-center justify-center  ">
+            <div className="flex-shrink-0 mr-auto">
               {/* Logo */}
               <img className="block lg:hidden h-8 w-auto" src="/logo.svg" alt="Workflow logo" />
               <img className="hidden lg:block h-8 w-auto" src="/logo.svg" alt="Workflow logo" />
             </div>
-            <div className="hidden sm:block sm:ml-6">
+            <div className="block">
               <div className="flex">
                 {/* Navbar links */}
-                <a href="#" className="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out">Inicio</a>
-                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out">Tableros</a>
-                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out">Plantillas</a>
-                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out">Más</a>
+                <button className='  hidden  sm:flex flex-row  items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 
+                transition duration-150 ease-in-out '>
+                <a href="#" className="px-3 py-2 rounded-md text-sm font-medium leading-5 ">
+                    Espacios de trabajo </a>
+
+                    <img src='flechaAbajo.svg' className='w-4 h-4'/>
+                </button>
+                <button className=' hidden md:flex flex-row  items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 
+                transition duration-150 ease-in-out  '>
+                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 ">
+                    Reciente</a>
+                    <img src='flechaAbajo.svg' className='w-e h-4'/>
+                </button>
+
+                <button className='  hidden lg:flex flex-row items-center  text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 
+                transition duration-150 ease-in-out  '>
+                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5">
+                    Marcado</a>
+                    <img src='flechaAbajo.svg' className='h-4 w-4'/>
+                </button>
+                <button className='  hidden 2xl:flex flex-row items-center  text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 
+                transition duration-150 ease-in-out '>
+                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5">
+                    Plantilla</a>
+                    <img src='flechaAbajo.svg' className='h-4 w-4'/>
+                </button>
+                <button className='  flex flex-row items-center  text-white bg-gray-700 focus:outline-none focus:bg-gray-700 
+                 ml-3 rounded-md '>
+                <a href="#" className=" px-3  rounded-md text-sm font-medium leading-5">
+                    Crear</a>
+                    
+                </button>        
               </div>
             </div>
           </div>
