@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import MenuDesplegable from '../SubComponent/MenuDesplegable';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <nav className="bg-gray-800 shadow-lg">
-      <div className="max-w-7xl mx-auto px-2  lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
-          
-          <div className="flex-1 flex items-center justify-center  ">
+          <div className="flex-1 flex items-center justify-center">
             <div className="flex-shrink-0 mr-auto">
               {/* Logo */}
               <img className="block lg:hidden h-8 w-auto" src="/logo.svg" alt="Workflow logo" />
@@ -15,38 +21,50 @@ const Navbar = () => {
             <div className="block">
               <div className="flex">
                 {/* Navbar links */}
-                <button className='  hidden  sm:flex flex-row  items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 
-                transition duration-150 ease-in-out '>
-                <a href="#" className="px-3 py-2 rounded-md text-sm font-medium leading-5 ">
-                    Espacios de trabajo </a>
-
-                    <img src='flechaAbajo.svg' className='w-4 h-4'/>
+                <button className='hidden ss:flex flex-row items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out'>
+                  <a href="#" className="px-3 py-2 rounded-md text-sm font-medium leading-5">
+                    Espacios de trabajo
+                  </a>
+                  <img src='flechaAbajo.svg' className='w-4 h-4' />
                 </button>
-                <button className=' hidden md:flex flex-row  items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 
-                transition duration-150 ease-in-out  '>
-                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 ">
-                    Reciente</a>
-                    <img src='flechaAbajo.svg' className='w-e h-4'/>
+                <button className='hidden md:flex flex-row items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out'>
+                  <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5">
+                    Reciente
+                  </a>
+                  <img src='flechaAbajo.svg' className='w-4 h-4' />
                 </button>
-
-                <button className='  hidden lg:flex flex-row items-center  text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 
-                transition duration-150 ease-in-out  '>
-                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5">
-                    Marcado</a>
-                    <img src='flechaAbajo.svg' className='h-4 w-4'/>
+                <button className='hidden lg:flex flex-row items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out'>
+                  <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5">
+                    Marcado
+                  </a>
+                  <img src='flechaAbajo.svg' className='w-4 h-4' />
                 </button>
-                <button className='  hidden 2xl:flex flex-row items-center  text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 
-                transition duration-150 ease-in-out '>
-                <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5">
-                    Plantilla</a>
-                    <img src='flechaAbajo.svg' className='h-4 w-4'/>
+                <button className='hidden 2xl:flex flex-row items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out'>
+                  <a href="#" className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5">
+                    Plantilla
+                  </a>
+                  <img src='flechaAbajo.svg' className='w-4 h-4' />
                 </button>
-                <button className='  flex flex-row items-center  text-white bg-gray-700 focus:outline-none focus:bg-gray-700 
-                 ml-3 rounded-md '>
-                <a href="#" className=" px-3  rounded-md text-sm font-medium leading-5">
-                    Crear</a>
+                <div className='relative'>
+                <button onClick={toggleDropdown} className='flex flex-row 2xl:hidden items-center text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out'>
+                  <span className='ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5'>
+                    Menu
+                  </span>
+                  <img src='flechaAbajo.svg' className={`h-4 w-4 ${isOpen ? 'rotate-0' : 'rotate-0'}`} />
+                </button>
+                {isOpen &&(
                     
-                </button>        
+                    <MenuDesplegable/>
+
+                )}
+                
+
+                </div>
+                <button className='flex flex-row items-center text-white bg-gray-700 focus:outline-none focus:bg-gray-700 ml-3 rounded-md'>
+                  <a href="#" className="px-3 rounded-md text-sm font-medium leading-5">
+                    Crear
+                  </a>
+                </button>
               </div>
             </div>
           </div>
@@ -82,4 +100,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

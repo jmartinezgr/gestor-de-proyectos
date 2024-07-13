@@ -1,0 +1,15 @@
+{
+    "menus": [
+      {
+        
+        "options": [
+          { "label": "Espacio de trabajo", "href": "#" },
+          { "label": "Reciente", "href": "#" },
+          { "label": "Marcado", "href": "#" },
+          {"label":"Plantilla", "href" :"#" }
+        ]
+      }
+     
+    ]
+  }
+  
